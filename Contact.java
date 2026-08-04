@@ -1,8 +1,8 @@
 // Name: Urzalla Razmowar
-// Date: 08/01/2026
+// Date: 08/04/2026
 // Purpose: Base Contact class demonstrating inheritance.
 
-public class Contact {
+public class Contact implements Displayable {
 
     protected String firstName;
     protected String lastName;
@@ -23,7 +23,8 @@ public class Contact {
         this.contactAddress = contactAddress;
     }
 
-    public void displayContact() {
+    @Override
+    public void displayInformation() {
         System.out.println("Name: " + firstName + " " + lastName);
         System.out.println("Phone: " + phoneNumber);
         System.out.println("Email: " + email);

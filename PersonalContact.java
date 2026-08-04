@@ -1,5 +1,5 @@
 // Name: Urzalla Razmowar
-// Date: 08/01/2026
+// Date: 08/04/2026
 // Purpose: Child class that demonstrattes inheritance from Contact.
 
 public class PersonalContact extends Contact {
@@ -19,9 +19,9 @@ public class PersonalContact extends Contact {
     }
     
     @Override
-    public void displayContact() {
+    public void displayInformation() {
         System.out.println("Personal Contact");
-        super.displayContact();
+        super.displayInformation();
         System.out.println("Relationship: " + relationship);
         System.out.println();
     }
