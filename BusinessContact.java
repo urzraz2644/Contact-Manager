@@ -1,5 +1,5 @@
 // Name: Urzalla Razmowar
-// Date: 08/04/2026
+// Date: 08/16/2026
 // Purpose: Child class that demonstrates inheritance from Contact.
 
 public class BusinessContact extends Contact {
@@ -20,9 +20,14 @@ public class BusinessContact extends Contact {
 
     @Override
     public void displayInformation() {
-        System.out.println("Business Contact");
+        System.out.println(getContactType());
         super.displayInformation();
         System.out.println("Company: " + company);
         System.out.println();
+    }
+
+    @Override
+    public String getContactType() {
+        return "Business Contact";
     }
 }

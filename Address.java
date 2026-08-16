@@ -1,5 +1,5 @@
 // Name: Urzalla Razmowar
-// Date: 08/04/2026
+// Date: 08/16/2026
 // Purpose: Address class used by Contact through composition.
 
 public class Address {
@@ -9,6 +9,13 @@ public class Address {
     private String state;
     private String zipCode;
 
+    public Address() {
+        this.street = "";
+        this.city = "";
+        this.state = "";
+        this.zipCode = "";
+    }
+    
     public Address(String street, String city, String state, String zipCode) {
         this.street = street;
         this.city = city;

@@ -1,14 +1,14 @@
 // Name: Urzalla Razmowar
-// Date: 08/04/2026
-// Purpose: Demonstrates inheritance and composition.
+// Date: 08/16/2026
+// Purpose: Demonstrates abstraction, inheritance, polymorphism, constructors, and access specifiers.
 
 public class Main {
 
     public static void main(String[] args) {
 
         System.out.println("=============================================");
-        System.out.println("Project Week 2");
-        System.out.println("Software Design: Interfaces and Polymorphism");
+        System.out.println("Project Week 3");
+        System.out.println("Abstraction, Constructors, & Access Specifiers");
         System.out.println("Urzalla Razmowar");
         System.out.println("Welcome to the Rolodex Contacts Application");
         System.out.println("The sample contacts are displayed below");
@@ -34,6 +34,7 @@ public class Main {
                 "Norfolk",
                 "VA",
                 "23510");
+
 
         BusinessContact business = new BusinessContact(
                 "Jane",

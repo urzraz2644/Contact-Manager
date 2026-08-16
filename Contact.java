@@ -1,9 +1,10 @@
 // Name: Urzalla Razmowar
-// Date: 08/04/2026
-// Purpose: Base Contact class demonstrating inheritance.
+// Date: 08/16/2026
+// Purpose: Abstract base Contact class demonstrating inheritance.
 
-public class Contact implements Displayable {
-
+// Abstraction: Contact defines common information and behavior for all contact types.
+public abstract class Contact implements Displayable {
+    // Access specifiers: protected fields allow derived contact classes to access shared data.
     protected String firstName;
     protected String lastName;
     protected String phoneNumber;
@@ -12,6 +13,7 @@ public class Contact implements Displayable {
     // Composition: Contact contains an Address object
     protected Address contactAddress;
 
+    // Constructor initizlizes the common information shared by all contact types.
     public Contact(String firstName, String lastName,
                    String phoneNumber, String email,
                    Address contactAddress) {
@@ -30,4 +32,7 @@ public class Contact implements Displayable {
         System.out.println("Email: " + email);
         System.out.println("Address: " + contactAddress);
     }
+
+    // Abstract method implemented by each type of contact
+    public abstract String getContactType();
 }
