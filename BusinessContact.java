@@ -1,5 +1,5 @@
 // Name: Urzalla Razmowar
-// Date: 08/16/2026
+// Date: 08/23/2026
 // Purpose: Child class that demonstrates inheritance from Contact.
 
 public class BusinessContact extends Contact {
