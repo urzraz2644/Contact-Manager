@@ -1,5 +1,5 @@
 // Name: Urzalla Razmowar
-// Date: 08/23/2026
+// Date: 08/29/2026
 // Purpose: Runs the Rolodex Contacts Application and provides database interactions.
 
 import java.util.Scanner;
@@ -16,7 +16,7 @@ public class Main {
 
         // Project information and welcome message
         System.out.println("========================================");
-        System.out.println("Project Week 4");
+        System.out.println("Project Week 5");
         System.out.println("Database Interactions");
         System.out.println("Urzalla Razmowar");
         System.out.println("Welcome to the Rolodex Contacts Application");
@@ -132,9 +132,10 @@ public class Main {
 
                 case 5:
                     System.out.println("Search Contacts selected.");
-                    System.out.println(
-                            "Search will be included as the application continues to develop."
-                    );
+                    System.out.println("Enter the first letter of the last name: ");
+                    String searchLetter = scanner.nextLine();
+
+                    DatabaseManager.searchContactsByLastName(searchLetter);
 
                     break;
 

@@ -1,5 +1,5 @@
 // Name: Urzalla Razmowar
-// Date: 08/23/2026
+// Date: 08/29/2026
 // Purpose: Managers the SQLite database connection for the Rolodex Contacts Application.
 
 import java.sql.Connection;
@@ -162,7 +162,57 @@ public class DatabaseManager {
                         System.out.println("Contact deleted from database.");
                     
                     } catch (SQLException e) {
-                        System.out.println("Delete contact error: " + e.getMessage());
+                        System.out.println("Delete contact error: " + e.getMessage());}
                     }
-                }
+                
+           public static void searchContactsByLastName(String letter) {
+
+    String sql = "SELECT * FROM contacts WHERE LOWER(lastName) LIKE LOWER(?)";
+
+    try (Connection connection = connect();
+         PreparedStatement statement = connection.prepareStatement(sql)) {
+
+        statement.setString(1, letter + "%");
+
+        ResultSet results = statement.executeQuery();
+
+        boolean found = false;
+
+        System.out.println();
+        System.out.println("Search Results");
+        System.out.println("-------------------------");
+
+        while (results.next()) {
+            found = true;
+
+            System.out.println("ID: " + results.getInt("id"));
+            System.out.println("Type: " + results.getString("contactType"));
+            System.out.println("Name: " +
+                    results.getString("firstName") + " " +
+                    results.getString("lastName"));
+            System.out.println("Phone: " + results.getString("phoneNumber"));
+            System.out.println("Email: " + results.getString("email"));
+            System.out.println("Address: " +
+                    results.getString("street") + ", " +
+                    results.getString("city") + ", " +
+                    results.getString("state") + " " +
+                    results.getString("zipCode"));
+            System.out.println("Relationship: " +
+                    results.getString("relationship"));
+            System.out.println("Company: " +
+                    results.getString("company"));
+            System.out.println();
         }
+
+        if (!found) {
+            System.out.println(
+                    "No contacts found with a last name beginning with " + letter + "."
+            );
+        }
+
+    } catch (SQLException e) {
+        System.out.println("Search contact error: " + e.getMessage());
+
+    }
+}
+                }
